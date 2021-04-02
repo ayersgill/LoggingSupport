@@ -34,7 +34,6 @@ namespace DASIT.LoggingSupport
                 return hash1 + (hash2 * 1566083941);
             }
         }
-
     }
 
 }
