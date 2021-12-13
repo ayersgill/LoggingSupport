@@ -1,26 +1,24 @@
-using DASIT.LoggingSupport;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Serilog;
-using Serilog.Exceptions;
-using Serilog.Exceptions.Core;
-using Serilog.Exceptions.EntityFrameworkCore.Destructurers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Exceptions;
+using Serilog.Exceptions.Core;
+using Serilog.Exceptions.EntityFrameworkCore.Destructurers;
+using Microsoft.ApplicationInsights.Extensibility;
+using DASIT.LoggingSupport;
 
-namespace LoggingSupportAmsterdamDemo
+namespace LoggingSupportAmsterdamNugetDemo
 {
     public class Startup
     {
-       
-
         private readonly ILogger logger;
 
         public Startup(IConfiguration configuration, IHostEnvironment env)
@@ -40,7 +38,7 @@ namespace LoggingSupportAmsterdamDemo
                         .WithDestructurers(new[] { new DbUpdateExceptionDestructurer() }))
                     .Enrich.FromLogContext()
                     .Enrich.WithProperty("EnvironmentName", env.EnvironmentName)
-                    .Enrich.WithProperty("ApplicationName", "Logging Support Demo")
+                    .Enrich.WithProperty("ApplicationName", "Logging Support Nuget Demo")
                     .WriteTo.ApplicationInsights(telemConfig, TelemetryConverter.Traces)
                     .CreateLogger();
 
@@ -57,7 +55,7 @@ namespace LoggingSupportAmsterdamDemo
                         .WithDestructurers(new[] { new DbUpdateExceptionDestructurer() }))
                 .Enrich.WithExceptionDetails()
                 .Enrich.FromLogContext()
-                .Enrich.WithProperty("ApplicationName", "Logging Support Demo")
+                .Enrich.WithProperty("ApplicationName", "Logging Support Nuget Demo")
                 .CreateLogger();
 
                 logger = Log.Logger.ForContext<Startup>();
