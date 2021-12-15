@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DASIT.LoggingSupport" Version="3.1.21.1-6474-Amsterdam-dev" />
+    <PackageReference Include="DASIT.LoggingSupport" Version="1.0.0-6492" />
   </ItemGroup>
 
   <ItemGroup>
