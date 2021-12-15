@@ -7,7 +7,7 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Logging Support library that includes all needed components for Serilog.</description>
     <releaseNotes>Converted to new ecosystem approach for libraries, starting with Amsterdam.</releaseNotes>
     <copyright>Copyright 2021</copyright>
   </metadata>
